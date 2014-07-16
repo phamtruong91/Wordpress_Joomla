@@ -27,7 +27,7 @@ Tìm hiểu về Wordpess và Joomla
 3) Cài đặt
 ---
 
-__Cài đặt Wordpress trên Ubuntu 14.04__
+__Các bước cài đặt Wordpress (Joomla) trên Ubuntu 14.04__
 
 
 2. Chuẩn bị môi trường Ubuntu 14.04
@@ -38,8 +38,13 @@ __Cài đặt Wordpress trên Ubuntu 14.04__
 2. Cài đặt PHP
 2. Thử nghiệm PHP 
 2. Tạo database name và database user
-2. Tải Wordpress
-2. Cài đặt Wordpress
+2. Tải Wordpress (Joomla)
+2. Cài đặt Wordpress (Joomla)
 2. Sao chép File vào Document Root
 2. Hoàn thành cài đặt thông qua giao diện web
+
+***
+
+__Bước 1. Chuẩn bị môi trường Ubuntu 14.04__
+
 
