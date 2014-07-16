@@ -35,7 +35,7 @@ __Các bước cài đặt Wordpress (Joomla) trên Ubuntu 14.04__
 2. Đổi mật khẩu root
 2. Cài đặt Apache
 2. Cài đặt MySQL
-2. Cài đặt PHP
+2. Cài đặt PHP và một số gói cần thiết
 2. Thử nghiệm PHP 
 2. Tạo database name và database user
 2. Tải Wordpress (Joomla)
@@ -47,4 +47,125 @@ __Các bước cài đặt Wordpress (Joomla) trên Ubuntu 14.04__
 
 __Bước 1. Chuẩn bị môi trường Ubuntu 14.04__
 
+__Bước 2. Cài đặt PuTTY và đăng nhập vào Ubuntu 14.04__
+
+__Bước 3. Đổi mật khẩu root__
+
+__Bước 4. Cài đặt Apache__
+
+```sh
+sudo apt-get update
+sudo apt-get install apache2
+```
+
+__Bước 5. Cài đặt MySQL__
+
+```sh
+sudo apt-get install mysql-server php5-mysql
+sudo mysql_install_db
+sudo mysql_secure_installation
+```
+
+__Bước 6. Cài đặt PHP và một số gói cần thiết__
+
+```sh
+sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt
+sudo nano /etc/apache2/mods-enabled/dir.conf
+```
+Sửa thành:
+
+```sh
+<IfModule mod_dir.c>
+    DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+</IfModule>
+```
+```sh
+sudo service apache2 restart
+```
+```sh
+apt-cache search php5-
+```
+```sh
+apt-cache show package_name
+```
+
+```sh
+sudo apt-get install package1 package2 ...
+```
+
+
+__Bước 7. Thử nghiệm PHP__
+
+```sh
+sudo nano /var/www/html/info.php
+```
+
+```sh
+http://your_server_IP_address/info.php
+```
+
+```sh
+sudo rm /var/www/html/info.php
+```
+
+__Bước 8. Tạo database name và database user__
+
+```sh
+mysql -u root -p
+CREATE DATABASE wordpress;
+CREATE USER wordpressuser@localhost IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON wordpress.* TO wordpressuser@localhost;
+FLUSH PRIVILEGES;
+exit
+```
+
+__Bước 9. Tải Wordpress__
+
+```sh
+cd ~
+wget http://wordpress.org/latest.tar.gz
+
+tar xzvf latest.tar.gz
+
+sudo apt-get update
+sudo apt-get install php5-gd libssh2-php
+```
+__Bước 10. Cài đặt Wordpress__
+
+```sh
+cd ~/wordpress
+cp wp-config-sample.php wp-config.php
+nano wp-config.php
+
+```
+
+__Bước 11.  Sao chép file vào document root__
+
+```sh
+sudo rsync -avP ~/wordpress/ /var/www/html/
+cd /var/www/html
+sudo chown -R demo:www-data *
+mkdir /var/www/html/wp-content/uploads
+sudo chown -R :www-data /var/www/html/wp-content/uploads
+```
+
+__Bước 12. Hoàn thành cài đặt thông qua giao diện web__
+
+```sh
+http://server_domain_name_or_IP
+sudo nano /etc/apache2/sites-available/000-default.conf
+sudo a2enmod rewrite
+sudo service apache2 restart
+```
+
+```sh
+touch /var/www/html/.htaccess
+sudo chown :www-data /var/www/html/.htaccess
+chmod 664 /var/www/html/.htaccess
+chmod 644 /var/www/html/.htaccess
+```
+
+```sh
+nano /var/www/html/.htaccess
+```
 
