@@ -29,19 +29,17 @@ Tìm hiểu về Wordpess và Joomla
 
 __Cài đặt Wordpress trên Ubuntu 14.04__
 
-2.  d
-2. dsa
 
-- Chuẩn bị môi trường Ubuntu 14.04
-- Cài đặt PuTTY và đăng nhập vào Ubuntu 14.04 
-- Đổi mật khẩu root
-- Cài đặt Apache
-- Cài đặt MySQL
-- Cài đặt PHP
-- Thử nghiệm PHP 
-- Tạo database name và database user
-- Tải Wordpress
-- Cài đặt Wordpress
-- Sao chép File vào Document Root
-- Hoàn thành cài đặt thông qua giao diện web
+2. Chuẩn bị môi trường Ubuntu 14.04
+2. Cài đặt PuTTY và đăng nhập vào Ubuntu 14.04 
+2. Đổi mật khẩu root
+2. Cài đặt Apache
+2. Cài đặt MySQL
+2. Cài đặt PHP
+2. Thử nghiệm PHP 
+2. Tạo database name và database user
+2. Tải Wordpress
+2. Cài đặt Wordpress
+2. Sao chép File vào Document Root
+2. Hoàn thành cài đặt thông qua giao diện web
 
