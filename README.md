@@ -11,7 +11,7 @@ Tìm hiểu về Wordpess và Joomla
 1) Ý nghĩa và vai trò
 ---
 * Joomla và WordPress đều là hệ quản trị nội dung mã nguồn mở hàng đầu trong lĩnh vực thiết kế website
-* 
+
 2) Thành phần
 ---
 
@@ -27,7 +27,10 @@ Tìm hiểu về Wordpess và Joomla
 3) Cài đặt
 ---
 
-#Cài đặt Wordpress trên Ubuntu 14.04
+__Cài đặt Wordpress trên Ubuntu 14.04__
+
+2.  d
+2. dsa
 
 - Chuẩn bị môi trường Ubuntu 14.04
 - Cài đặt PuTTY và đăng nhập vào Ubuntu 14.04 
