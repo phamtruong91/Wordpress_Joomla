@@ -27,8 +27,9 @@ Tìm hiểu về Wordpess và Joomla
 3) Cài đặt
 ---
 
-__Các bước cài đặt Wordpress (Joomla) trên Ubuntu 14.04__
+__Các bước cài đặt Wordpress trên Ubuntu 14.04__
 
+__Cài đặt LAMP__
 
 2. Chuẩn bị môi trường Ubuntu 14.04
 2. Cài đặt PuTTY và đăng nhập vào Ubuntu 14.04 
@@ -37,12 +38,21 @@ __Các bước cài đặt Wordpress (Joomla) trên Ubuntu 14.04__
 2. Cài đặt MySQL
 2. Cài đặt PHP và một số gói cần thiết
 2. Thử nghiệm PHP 
-2. Tạo database name và database user
-2. Tải Wordpress (Joomla)
-2. Cài đặt Wordpress (Joomla)
-2. Sao chép File vào Document Root
-2. Hoàn thành cài đặt thông qua giao diện web
 
+__Cài đặt Wordpess__
+
+* Tạo database name và database user
+* Tải Wordpress 
+* Cài đặt Wordpress 
+* Sao chép File vào Document Root
+* Hoàn thành cài đặt thông qua giao diện web
+
+__Cài đặt Joomla__
+
+* Tải Joomla
+* Cài đặt
+* Tạo database và user
+* Truy cập cài đặt Joomla
 ***
 
 __Bước 1. Chuẩn bị môi trường Ubuntu 14.04__
@@ -107,8 +117,9 @@ http://your_server_IP_address/info.php
 ```sh
 sudo rm /var/www/html/info.php
 ```
+__Cài đặt Wordpess__
 
-__Bước 8. Tạo database name và database user__
+__Tạo database name và database user__
 
 ```sh
 mysql -u root -p
@@ -119,8 +130,9 @@ FLUSH PRIVILEGES;
 exit
 ```
 
-__Bước 9. Tải Wordpress__
+__Tải Gói__
 
+Tải WordPress
 ```sh
 cd ~
 wget http://wordpress.org/latest.tar.gz
@@ -130,7 +142,11 @@ tar xzvf latest.tar.gz
 sudo apt-get update
 sudo apt-get install php5-gd libssh2-php
 ```
-__Bước 10. Cài đặt Wordpress__
+
+```
+__Cài đặt__
+
+Cài đặt Wordpess
 
 ```sh
 cd ~/wordpress
@@ -151,7 +167,6 @@ define('DB_USER', 'wordpressuser');
 /** MySQL database password */
 define('DB_PASSWORD', 'password');
 ```
-
 __Bước 11.  Sao chép file vào document root__
 
 ```sh
@@ -182,3 +197,39 @@ chmod 644 /var/www/html/.htaccess
 nano /var/www/html/.htaccess
 ```
 
+__Cài đặt Joomla__
+
+__Tải Joomla__
+
+```sh
+mkdir temp
+cd temp
+wget http://joomlacode.org/gf/download/frsrelease/17410/76021/Joomla_2.5.7-Stable-Full_Package.tar.gz
+sudo tar zxvf Joomla_2.5.7-Stable-Full_Package.tar.gz  -C /var/www
+```
+
+__Cài đặt__
+
+```sh
+sudo touch /var/www/configuration.php
+sudo chmod 777 /var/www/configuration.php
+```
+__Tạo database và user__
+
+```sh
+mysql -u root -p
+CREATE DATABASE joomla;
+CREATE USER juser@localhost;
+SET PASSWORD FOR juser@localhost= PASSWORD("password");
+GRANT ALL PRIVILEGES ON joomla.* TO juser@localhost IDENTIFIED BY 'password';
+FLUSH PRIVILEGES;
+exit
+sudo service apache2 restart
+```
+
+__Truy cập cài đặt Joomla__
+
+```sh
+sudo rm -rf /var/www/installation/
+sudo chmod 755 /var/www/configuration.php
+```
