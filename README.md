@@ -159,8 +159,8 @@ Cài đặt Wordpess
 cd ~/wordpress
 cp wp-config-sample.php wp-config.php
 nano wp-config.php
-
 ```
+
 Sửa thành
 
 ```sh
