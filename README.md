@@ -173,7 +173,7 @@ define('DB_USER', 'wordpressuser');
 /** MySQL database password */
 define('DB_PASSWORD', 'password');
 ```
-__Bước 11.  Sao chép file vào document root__
+__Sao chép file vào document root__
 
 ```sh
 sudo rsync -avP ~/wordpress/ /var/www/html/
@@ -183,7 +183,7 @@ mkdir /var/www/html/wp-content/uploads
 sudo chown -R :www-data /var/www/html/wp-content/uploads
 ```
 
-__Bước 12. Hoàn thành cài đặt thông qua giao diện web__
+__Hoàn thành cài đặt thông qua giao diện web__
 
 ```sh
 http://server_domain_name_or_IP
