@@ -110,6 +110,12 @@ __Bước 7. Thử nghiệm PHP__
 ```sh
 sudo nano /var/www/html/info.php
 ```
+Thêm vào
+```sh
+<?php
+phpinfo();
+?>
+```
 
 ```sh
 http://your_server_IP_address/info.php
