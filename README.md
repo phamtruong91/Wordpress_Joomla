@@ -53,6 +53,7 @@ __Cài đặt Joomla__
 * Cài đặt
 * Tạo database và user
 * Truy cập cài đặt Joomla
+
 ***
 
 __Bước 1. Chuẩn bị môi trường Ubuntu 14.04__
