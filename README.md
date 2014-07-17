@@ -150,7 +150,6 @@ sudo apt-get update
 sudo apt-get install php5-gd libssh2-php
 ```
 
-```
 __Cài đặt__
 
 Cài đặt Wordpess
